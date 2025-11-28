@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.Region?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" 
+      xmlns="http://javafx.com/javafx/17" 
+      fx:controller="br.feevale.ModalController"
+      alignment="CENTER" 
+      spacing="20" 
+      styleClass="modal-container"
+      stylesheets="@style.css"
+      minWidth="450"
+      minHeight="550"
+      maxWidth="700"
+      maxHeight="800">
+    
+    <padding>
+        <Insets topRightBottomLeft="35"/>
+    </padding>
+    
+    <Label text="Confirmar produto" 
+           styleClass="modal-badge"
+           alignment="CENTER"
+           maxWidth="Infinity">
+        <font>
+            <Font name="System Bold" size="13"/>
+        </font>
+    </Label>
+    
+    <!-- container da Imagem com fundo -->
+    <VBox alignment="CENTER" styleClass="modal-image-container">
+        <ImageView fx:id="imagemProduto" 
+                   fitHeight="130" 
+                   fitWidth="130" 
+                   preserveRatio="true"/>
+    </VBox>
+    
+    <!-- nome produto -->
+    <Label fx:id="labelNomeProduto" 
+           alignment="CENTER"
+           wrapText="true"
+           maxWidth="Infinity">
+        <font>
+            <Font name="System Bold" size="24"/>
+        </font>
+    </Label>
+    
+    <!-- linha p separar -->
+    <HBox alignment="CENTER" spacing="10">
+        <Rectangle width="70" height="2" styleClass="modal-divider" arcWidth="5" arcHeight="5"/>
+        <Label text="✦" styleClass="modal-divider-icon">
+            <font>
+                <Font size="14"/>
+            </font>
+        </Label>
+        <Rectangle width="70" height="2" styleClass="modal-divider" arcWidth="5" arcHeight="5"/>
+    </HBox>
+    
+    <!-- desc do produto -->
+    <Label fx:id="labelDescricao" 
+           wrapText="true" 
+           alignment="CENTER"
+           maxWidth="Infinity">
+        <font>
+            <Font size="14"/>
+        </font>
+    </Label>
+    
+    <Region VBox.vgrow="SOMETIMES"/>
+    
+    <!-- preco produto -->
+    <VBox alignment="CENTER" spacing="5" styleClass="modal-preco-container" maxWidth="Infinity">
+        <padding>
+            <Insets topRightBottomLeft="12"/>
+        </padding>
+        <Label text="Preço" styleClass="modal-preco-label">
+            <font>
+                <Font name="System Bold" size="11"/>
+            </font>
+        </Label>
+        <Label fx:id="labelPreco" 
+               alignment="CENTER"
+               maxWidth="Infinity">
+            <font>
+                <Font name="System Bold" size="30"/>
+            </font>
+        </Label>
+    </VBox>
+    
+    <Region VBox.vgrow="SOMETIMES"/>
+    
+    <!-- botoes de acao -->
+    <HBox spacing="15" alignment="CENTER">
+        
+        <!-- add-->
+        <Button fx:id="btnAdicionar"
+                text="Adicionar" 
+                onAction="#adicionarAoCarrinho"
+                minWidth="160"
+                minHeight="50"
+                maxWidth="220"
+                HBox.hgrow="ALWAYS"
+                styleClass="btn-modal-adicionar"
+                wrapText="true"/>
+        
+        <!-- cancelar -->
+        <Button fx:id="btnCancelar"
+                text="Cancelar" 
+                onAction="#cancelar"
+                minWidth="120"
+                minHeight="50"
+                maxWidth="180"
+                HBox.hgrow="ALWAYS"
+                styleClass="btn-modal-cancelar"
+                wrapText="true"/>
+    </HBox>
+    
+</VBox>

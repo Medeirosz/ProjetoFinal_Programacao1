@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.text.Font?>
+
+<HBox xmlns="http://javafx.com/javafx/17" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="br.feevale.SecondaryController" 
+      styleClass="root" 
+      stylesheets="@style.css"
+      prefHeight="1200.0" 
+      prefWidth="800.0"
+      minHeight="600.0"
+      minWidth="600.0"
+      spacing="0">
+
+   <!-- produtos 60% -->
+   <VBox styleClass="produtos-area" HBox.hgrow="ALWAYS" minWidth="350">
+      <HBox.margin>
+         <Insets/>
+      </HBox.margin>
+      
+      <!-- header -->
+      <VBox styleClass="totem-header" alignment="CENTER">
+         <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+         </padding>
+         
+         <Label text="☕ CAFETERIA PREMIUM" styleClass="totem-titulo" wrapText="true" alignment="CENTER">
+            <font>
+               <Font name="System Bold" size="32.0"/>
+            </font>
+         </Label>
+         <Label text="Toque nos produtos para adicionar" styleClass="totem-subtitulo" wrapText="true" alignment="CENTER">
+            <font>
+               <Font size="14.0"/>
+            </font>
+         </Label>
+      </VBox>
+
+      <Separator styleClass="separator-gold-thick"/>
+
+      <!-- ScrollPane com produtos -->
+      <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="totem-scroll">
+         <VBox spacing="20.0">
+            <padding>
+               <Insets top="20" right="15" bottom="20" left="15"/>
+            </padding>
+            
+            <!-- cafes section -->
+            <Label text="Cáfes" styleClass="totem-section-title">
+               <font>
+                  <Font name="System Bold" size="22.0"/>
+               </font>
+            </Label>
+
+            <!-- grid cafes  -->
+            <GridPane hgap="12.0" vgap="12.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="50.0" hgrow="ALWAYS"/>
+                  <ColumnConstraints percentWidth="50.0" hgrow="ALWAYS"/>
+               </columnConstraints>
+
+               <Button onAction="#addExpresso" 
+                       GridPane.columnIndex="0" GridPane.rowIndex="0"
+                       minHeight="100.0" maxWidth="Infinity" 
+                       styleClass="btn-produto-cafe-expresso" 
+                       text="Café Expresso0" 
+                       wrapText="true">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+               </Button>
+               
+               <Button onAction="#addPassado" 
+                       GridPane.columnIndex="1" GridPane.rowIndex="0"
+                       minHeight="100.0" maxWidth="Infinity" 
+                       styleClass="btn-produto-cafe-passado" 
+                       text="Café Passado" 
+                       wrapText="true">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+               </Button>
+               
+               <Button onAction="#addComLeite" 
+                       GridPane.columnIndex="0" GridPane.rowIndex="1"
+                       minHeight="100.0" maxWidth="Infinity" 
+                       styleClass="btn-produto-cafe-leite" 
+                       text="Café com Leite" 
+                       wrapText="true">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+               </Button>
+            </GridPane>
+            
+            <Separator styleClass="separator-coffee">
+               <VBox.margin>
+                  <Insets top="8" bottom="8"/>
+               </VBox.margin>
+            </Separator>
+            
+            <!-- secao lanches -->
+            <Label text="Lanches e Salgados" styleClass="totem-section-title">
+               <font>
+                  <Font name="System Bold" size="22.0"/>
+               </font>
+            </Label>
+
+            <!-- grid comida -->
+            <GridPane hgap="12.0" vgap="12.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="50.0" hgrow="ALWAYS"/>
+                  <ColumnConstraints percentWidth="50.0" hgrow="ALWAYS"/>
+               </columnConstraints>
+
+               <Button onAction="#addPaoQueijo" 
+                       GridPane.columnIndex="0" GridPane.rowIndex="0"
+                       minHeight="100.0" maxWidth="Infinity" 
+                       styleClass="btn-produto-pao-queijo" 
+                       text="Pão de Queijo" 
+                       wrapText="true">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+               </Button>
+               
+               <Button onAction="#addMisto" 
+                       GridPane.columnIndex="1" GridPane.rowIndex="0"
+                       minHeight="100.0" maxWidth="Infinity" 
+                       styleClass="btn-produto-misto" 
+                       text="Misto Quente" 
+                       wrapText="true">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+               </Button>
+               
+               <Button onAction="#addPaoChapa" 
+                       GridPane.columnIndex="0" GridPane.rowIndex="1"
+                       minHeight="100.0" maxWidth="Infinity" 
+                       styleClass="btn-produto-misto" 
+                       text="Pão na Chapa" 
+                       wrapText="true">
+                  <font>
+                     <Font name="System Bold" size="15.0"/>
+                  </font>
+               </Button>
+            </GridPane>
+            
+         </VBox>
+      </ScrollPane>
+   </VBox>
+
+   <!-- carrinho 40%-->
+   <VBox styleClass="totem-carrinho-container" 
+         minWidth="280" 
+         maxWidth="400"
+         prefWidth="320" 
+         spacing="15">
+      <padding>
+         <Insets top="20" right="15" bottom="20" left="15"/>
+      </padding>
+
+      <!-- titulo do carrinho -->
+      <HBox alignment="CENTER" spacing="8">
+         <!-- <Label text="🛒" style="-fx-font-size: 28px;"/> -->
+         <Label text="SEU PEDIDO" styleClass="totem-carrinho-titulo">
+            <font>
+               <Font name="System Bold" size="22.0"/>
+            </font>
+         </Label>
+      </HBox>
+
+      <Separator styleClass="separator-gold"/>
+
+      <!-- ListView do carrinho -->
+      <ListView fx:id="listaPedido" 
+                prefHeight="250"
+                minHeight="180"
+                maxHeight="350"
+                VBox.vgrow="SOMETIMES"
+                style="-fx-background-color: #2a1f18;
+                       -fx-border-color: #6B4423;
+                       -fx-border-width: 2;
+                       -fx-border-radius: 10;
+                       -fx-background-radius: 10;">
+         <VBox.margin>
+            <Insets top="5"/>
+         </VBox.margin>
+      </ListView>
+
+      <!-- botoes carrinho -->
+      <VBox spacing="10">
+         <Button onAction="#diminuirQuantidade" 
+                 styleClass="btn-totem-remover" 
+                 text="Remover item selecionado"
+                 maxWidth="Infinity"
+                 minHeight="40">
+            <font>
+               <Font name="System Bold" size="13.0"/>
+            </font>
+         </Button>
+         
+         <Button onAction="#limparCarrinho" 
+                 styleClass="btn-totem-limpar" 
+                 text="Limpar carrinho"
+                 maxWidth="Infinity"
+                 minHeight="40">
+            <font>
+               <Font name="System Bold" size="13.0"/>
+            </font>
+         </Button>
+      </VBox>
+
+      <Separator styleClass="separator-gold">
+         <VBox.margin>
+            <Insets top="8"/>
+         </VBox.margin>
+      </Separator>
+
+      <!-- total -->
+      <VBox alignment="CENTER" spacing="5">
+         <Label text="Total do pedido:" styleClass="totem-total-label">
+            <font>
+               <Font name="System Bold" size="15.0"/>
+            </font>
+         </Label>
+         <Label fx:id="labelTotal" text="R$ 0,00" styleClass="totem-total-valor">
+            <font>
+               <Font name="System Bold" size="34.0"/>
+            </font>
+         </Label>
+      </VBox>
+
+      <!-- botao finalizar -->
+      <Button onAction="#confirmarPedido" 
+              styleClass="btn-totem-finalizar" 
+              text="Finalizar pedido"
+              maxWidth="Infinity"
+              minHeight="60">
+         <font>
+            <Font name="System Bold" size="18.0"/>
+         </font>
+         <VBox.margin>
+            <Insets top="10"/>
+         </VBox.margin>
+      </Button>
+
+      <!-- totao voltar -->
+      <Button onAction="#switchToPrimary" 
+              styleClass="btn-totem-voltar" 
+              text="Voltar"
+              maxWidth="Infinity"
+              minHeight="40">
+         <font>
+            <Font name="System Bold" size="13.0"/>
+         </font>
+         <VBox.margin>
+            <Insets top="5"/>
+         </VBox.margin>
+      </Button>
+
+   </VBox>
+
+</HBox>

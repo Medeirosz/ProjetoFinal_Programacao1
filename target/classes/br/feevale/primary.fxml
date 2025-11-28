@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="40.0" xmlns="http://javafx.com/javafx/17" 
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.feevale.PrimaryController"
+      prefHeight="1200.0" prefWidth="800.0"
+      stylesheets="@style.css"
+      style="-fx-background-color: linear-gradient(to bottom, #2C1810, #1a0f0a);">
+   
+   <padding>
+      <Insets top="50" right="50" bottom="50" left="50"/>
+   </padding>
+   
+   <children>
+      <Region VBox.vgrow="SOMETIMES"/>
+      
+      <!-- title -->
+      <Label fx:id="tBemVindo" text="Cafeteria Ragu" textFill="#D4AF37" wrapText="true" alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="52.0"/>
+         </font>
+      </Label>
+      
+      <Label text="Sistema de Autoatendimento" textFill="#C9A77C" wrapText="true" alignment="CENTER">
+         <font>
+            <Font size="24.0"/>
+         </font>
+      </Label>
+      
+      <Region prefHeight="30"/>
+      
+      <!-- iniciar pedido -->
+      <Button fx:id="bStartOrder" 
+              onAction="#switchToSecondary" 
+              minHeight="100.0"
+              maxWidth="600.0"
+              prefWidth="500.0"
+              style="-fx-background-color: linear-gradient(to bottom, #D4AF37, #C19A6B);
+                     -fx-text-fill: #2C1810;
+                     -fx-font-weight: bold;
+                     -fx-font-size: 28px;
+                     -fx-background-radius: 20;
+                     -fx-cursor: hand;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 15, 0, 0, 5);"
+              text="Iniciar pedido"
+              wrapText="true">
+         <VBox.margin>
+            <Insets top="20.0"/>
+         </VBox.margin>
+      </Button>
+      
+      <Region prefHeight="20"/>
+      
+      <!-- adm switch -->
+      <Button fx:id="bAdmin" 
+              onAction="#abrirAdmin" 
+              minHeight="70.0"
+              maxWidth="400.0"
+              prefWidth="350.0"
+              style="-fx-background-color: linear-gradient(to bottom, #424242, #303030);
+                     -fx-text-fill: #D4AF37;
+                     -fx-font-weight: bold;
+                     -fx-font-size: 18px;
+                     -fx-background-radius: 15;
+                     -fx-cursor: hand;
+                     -fx-border-color: #D4AF37;
+                     -fx-border-width: 2;
+                     -fx-border-radius: 15;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 3);"
+              text="Painel Adm"
+              wrapText="true">
+         <VBox.margin>
+            <Insets top="10.0"/>
+         </VBox.margin>
+      </Button>
+      
+      <Region VBox.vgrow="ALWAYS"/>
+   </children>
+</VBox>

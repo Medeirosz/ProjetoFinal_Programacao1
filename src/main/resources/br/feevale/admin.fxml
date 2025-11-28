@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="br.feevale.AdminController"
+      spacing="20"
+      stylesheets="@style.css"
+      styleClass="admin-background"
+      prefWidth="800" 
+      prefHeight="1200">
+   
+   <padding>
+      <Insets top="30" right="30" bottom="30" left="30"/>
+   </padding>
+   
+   <!-- header -->
+   <VBox styleClass="admin-header" alignment="CENTER" spacing="10">
+      <padding>
+         <Insets top="20" right="20" bottom="20" left="20"/>
+      </padding>
+      
+      <Label text="ADM" styleClass="admin-titulo-principal">
+         <font>
+            <Font name="System Bold" size="32.0"/>
+         </font>
+      </Label>
+      
+      <Label text="Gestão de pedidos e estatísticas" styleClass="admin-subtitulo-header">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </Label>
+   </VBox>
+   
+   <!-- stats -->
+   <HBox spacing="20" alignment="CENTER">
+      <VBox alignment="CENTER" spacing="10" styleClass="admin-card-stats" prefWidth="350">
+         <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+         </padding>
+         
+         <!-- <Label text="📊" style="-fx-font-size: 36px;"/> -->
+         <Label text="TOTAL DE PEDIDOS" styleClass="admin-card-label">
+            <font>
+               <Font name="System Bold" size="12.0"/>
+            </font>
+         </Label>
+         <Label fx:id="labelTotalPedidos" text="0" styleClass="admin-card-value-blue">
+            <font>
+               <Font name="System Bold" size="38.0"/>
+            </font>
+         </Label>
+      </VBox>
+      
+      <VBox alignment="CENTER" spacing="10" styleClass="admin-card-stats" prefWidth="350">
+         <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+         </padding>
+         
+         <!-- <Label text="💰" style="-fx-font-size: 36px;"/> -->
+         <Label text="Faturamento total" styleClass="admin-card-label">
+            <font>
+               <Font name="System Bold" size="12.0"/>
+            </font>
+         </Label>
+         <Label fx:id="labelValorTotal" text="R$ 0,00" styleClass="admin-card-value-green">
+            <font>
+               <Font name="System Bold" size="34.0"/>
+            </font>
+         </Label>
+      </VBox>
+   </HBox>
+   
+   <Separator styleClass="separator-admin"/>
+   
+   <!-- main -->
+   <HBox spacing="20" VBox.vgrow="ALWAYS">
+      
+      <!-- lista de pedidos -->
+      <VBox spacing="15" prefWidth="370">
+         
+         <Label text="Pedidos registrados" styleClass="admin-section-title-white">
+            <font>
+               <Font name="System Bold" size="16.0"/>
+            </font>
+         </Label>
+         
+         <ListView fx:id="listaPedidos" 
+                   styleClass="admin-lista-pedidos-moderna"
+                   prefHeight="400"
+                   VBox.vgrow="ALWAYS"/>
+         
+         <Button onAction="#atualizarLista" 
+                 prefHeight="45" 
+                 maxWidth="Infinity"
+                 styleClass="btn-admin-refresh"
+                 text="Atulizar lista">
+            <font>
+               <Font name="System Bold" size="14.0"/>
+            </font>
+         </Button>
+      </VBox>
+      
+      <!-- detalhes e controles -->
+      <VBox spacing="15" prefWidth="350">
+         
+         <Label fx:id="labelPedidoSelecionado" 
+                text="Detalhes do pedido" 
+                styleClass="admin-section-title-white">
+            <font>
+               <Font name="System Bold" size="16.0"/>
+            </font>
+         </Label>
+         
+         <TextArea fx:id="detalhesArea" 
+                   editable="false"
+                   wrapText="true"
+                   styleClass="admin-textarea-detalhes"
+                   prefHeight="250">
+            <font>
+               <Font name="Monospaced" size="11.0"/>
+            </font>
+         </TextArea>
+         
+         <Separator styleClass="separator-admin"/>
+         
+         <VBox spacing="15" styleClass="admin-control-panel">
+            <padding>
+               <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            
+            <Label text="Gerenciar Status" styleClass="admin-control-title">
+               <font>
+                  <Font name="System Bold" size="15.0"/>
+               </font>
+            </Label>
+            
+            <ComboBox fx:id="comboStatus" 
+                      prefHeight="45" 
+                      maxWidth="Infinity"
+                      styleClass="admin-combo-moderna"
+                      promptText="Selecione o novo status"/>
+            
+            <Button onAction="#alterarStatus" 
+                    prefHeight="50" 
+                    maxWidth="Infinity"
+                    styleClass="btn-admin-confirmar"
+                    text="Confirmar alteração">
+               <font>
+                  <Font name="System Bold" size="15.0"/>
+               </font>
+            </Button>
+         </VBox>
+      </VBox>
+   </HBox>
+   
+   <!-- footer -->
+   <Separator styleClass="separator-admin"/>
+   
+   <Button onAction="#voltarMenu" 
+           prefHeight="50" 
+           prefWidth="300"
+           styleClass="btn-admin-voltar-menu"
+           text="Voltar">
+      <font>
+         <Font name="System Bold" size="14.0"/>
+      </font>
+   </Button>
+   
+</VBox>

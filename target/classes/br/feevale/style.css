@@ -1,0 +1,621 @@
+/* ========================================================================= */
+/*                           VARIÁVEIS GLOBAIS                               */
+/* ========================================================================= */
+
+.root {
+    /* Cores principais */
+    -fx-primary-dark: #2C1810;
+    -fx-primary-darker: #1a0f0a;
+    -fx-secondary-dark: #3d2817;
+    -fx-secondary-darker: #2a1f18;
+    
+    /* Cores de destaque */
+    -fx-gold: #D4AF37;
+    -fx-gold-light: #F5DEB3;
+    -fx-gold-medium: #C9A77C;
+    
+    /* Cores de café */
+    -fx-coffee-dark: #3E2723;
+    -fx-coffee-medium: #5D4037;
+    -fx-coffee-light: #6D4C41;
+    -fx-coffee-lighter: #795548;
+    -fx-coffee-border: #6B4423;
+    
+    /* Cores de ação */
+    -fx-success: #2E7D32;
+    -fx-success-light: #388E3C;
+    -fx-danger: #C62828;
+    -fx-warning: #FF6F00;
+}
+
+/* ========================================================================= */
+/*                           TELA PRIMARY                                    */
+/* ========================================================================= */
+
+#bStartOrder:hover {
+    -fx-background-color: linear-gradient(to bottom, #E8C088, #D4AF77);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0.4, 0, 6);
+}
+
+#bStartOrder:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-background-color: linear-gradient(to bottom, #C19A6B, #A67C52);
+}
+
+#bAdmin:hover {
+    -fx-background-color: linear-gradient(to bottom, #525252, #424242);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+#bAdmin:pressed {
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+
+#tBemVindo {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 8, 0.0, 0, 3);
+}
+
+/* ========================================================================= */
+/*                    TELA SECONDARY - LAYOUT TOTEM                          */
+/* ========================================================================= */
+
+#rootPane {
+    -fx-background-color: linear-gradient(to bottom, #2C1810, #1a0f0a);
+}
+
+.produtos-area {
+    -fx-background-color: linear-gradient(to bottom, #2C1810, #1a0f0a);
+}
+
+.totem-header {
+    -fx-background-color: linear-gradient(to bottom, #3E2723, #2C1810);
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 0 0 3 0;
+}
+
+.totem-titulo {
+    -fx-text-fill: #D4AF37;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 10, 0, 0, 3);
+}
+
+.totem-subtitulo {
+    -fx-text-fill: #C9A77C;
+}
+
+.totem-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.totem-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.totem-scroll .scroll-bar {
+    -fx-background-color: #3d2817;
+}
+
+.totem-section-title {
+    -fx-text-fill: #D4AF37;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 2);
+}
+
+/* ========================================================================= */
+/*                           BOTÕES DE PRODUTOS                              */
+/* ========================================================================= */
+
+.btn-produto-cafe-expresso,
+.btn-produto-cafe-passado,
+.btn-produto-cafe-leite {
+    -fx-background-color: linear-gradient(to bottom, #5D4037, #4E342E);
+    -fx-text-fill: #F5DEB3;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-border-color: #8D6E63;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 3);
+    -fx-alignment: center;
+}
+
+.btn-produto-cafe-passado {
+    -fx-background-color: linear-gradient(to bottom, #6D4C41, #5D4037);
+}
+
+.btn-produto-cafe-leite {
+    -fx-background-color: linear-gradient(to bottom, #795548, #6D4C41);
+}
+
+.btn-produto-pao-queijo,
+.btn-produto-misto,
+.btn-produto-pao-chapa {
+    -fx-background-color: linear-gradient(to bottom, #8D6E63, #795548);
+    -fx-text-fill: #F5DEB3;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-border-color: #A1887F;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 3);
+    -fx-alignment: center;
+}
+
+.btn-produto-misto {
+    -fx-background-color: linear-gradient(to bottom, #A1887F, #8D6E63);
+}
+
+.btn-produto-pao-chapa {
+    -fx-background-color: linear-gradient(to bottom, #BCAAA4, #A1887F);
+    -fx-text-fill: #3E2723;
+}
+
+.btn-produto-cafe-expresso:hover,
+.btn-produto-cafe-passado:hover,
+.btn-produto-cafe-leite:hover,
+.btn-produto-pao-queijo:hover,
+.btn-produto-misto:hover,
+.btn-produto-pao-chapa:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(212, 175, 55, 0.6), 15, 0, 0, 5);
+}
+
+.btn-produto-cafe-expresso:pressed,
+.btn-produto-cafe-passado:pressed,
+.btn-produto-cafe-leite:pressed,
+.btn-produto-pao-queijo:pressed,
+.btn-produto-misto:pressed,
+.btn-produto-pao-chapa:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* ========================================================================= */
+/*                           ÁREA DO CARRINHO                                */
+/* ========================================================================= */
+
+.totem-carrinho-container {
+    -fx-background-color: linear-gradient(to top, #1a1410, #2a1f18);
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 0 0 0 3;
+}
+
+.totem-carrinho-titulo {
+    -fx-text-fill: #D4AF37;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0, 0, 2);
+}
+
+#listaPedido .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #F5DEB3;
+    -fx-font-size: 14px;
+    -fx-padding: 12px 15px;
+    -fx-border-color: transparent transparent #3d2817 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+#listaPedido .list-cell:selected {
+    -fx-background-color: rgba(212, 175, 55, 0.25);
+    -fx-text-fill: #D4AF37;
+    -fx-font-weight: bold;
+    -fx-border-color: #D4AF37;
+}
+
+#listaPedido .list-cell:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.15);
+}
+
+#listaPedido .list-cell:empty {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+}
+
+.btn-totem-remover {
+    -fx-background-color: linear-gradient(to bottom, #FF6F00, #E65100);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0, 0, 2);
+}
+
+.btn-totem-remover:hover {
+    -fx-background-color: linear-gradient(to bottom, #FF8F00, #F57C00);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.btn-totem-limpar {
+    -fx-background-color: linear-gradient(to bottom, #C62828, #B71C1C);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0, 0, 2);
+}
+
+.btn-totem-limpar:hover {
+    -fx-background-color: linear-gradient(to bottom, #D32F2F, #C62828);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.totem-total-label {
+    -fx-text-fill: #D4AF37;
+}
+
+.totem-total-valor {
+    -fx-text-fill: #4CAF50;
+    -fx-effect: dropshadow(gaussian, rgba(76, 175, 80, 0.5), 8, 0, 0, 2);
+}
+
+.btn-totem-finalizar {
+    -fx-background-color: linear-gradient(to bottom, #2E7D32, #1B5E20);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 12, 0, 0, 4);
+}
+
+.btn-totem-finalizar:hover {
+    -fx-background-color: linear-gradient(to bottom, #388E3C, #2E7D32);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(76, 175, 80, 0.6), 15, 0, 0, 5);
+}
+
+.btn-totem-finalizar:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.btn-totem-voltar {
+    -fx-background-color: rgba(66, 66, 66, 0.6);
+    -fx-text-fill: #BDBDBD;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-border-color: #616161;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+.btn-totem-voltar:hover {
+    -fx-background-color: rgba(82, 82, 82, 0.8);
+    -fx-text-fill: #E0E0E0;
+}
+
+/* ========================================================================= */
+/*                           SEPARADORES                                     */
+/* ========================================================================= */
+
+.separator-gold {
+    -fx-background-color: #D4AF37;
+    -fx-pref-height: 2;
+}
+
+.separator-gold-thick {
+    -fx-background-color: #D4AF37;
+    -fx-pref-height: 3;
+}
+
+.separator-coffee {
+    -fx-background-color: #6B4423;
+    -fx-pref-height: 2;
+}
+
+/* ========================================================================= */
+/*                           MODAL DE CONFIRMAÇÃO                            */
+/* ========================================================================= */
+
+.modal-container {
+    -fx-background-color: linear-gradient(to bottom, #3E2723, #2C1810);
+    -fx-background-radius: 20;
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 3;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 25, 0, 0, 10);
+}
+
+.modal-badge {
+    -fx-background-color: #D4AF37;
+    -fx-text-fill: #2C1810;
+    -fx-background-radius: 15;
+    -fx-padding: 8 20 8 20;
+    -fx-font-weight: bold;
+}
+
+.modal-image-container {
+    -fx-background-color: rgba(212, 175, 55, 0.1);
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+}
+
+.modal-container Label {
+    -fx-text-fill: #F5DEB3;
+}
+
+.modal-divider {
+    -fx-fill: #D4AF37;
+}
+
+.modal-divider-icon {
+    -fx-text-fill: #D4AF37;
+}
+
+.modal-preco-container {
+    -fx-background-color: rgba(76, 175, 80, 0.2);
+    -fx-background-radius: 12;
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+}
+
+.modal-preco-label {
+    -fx-text-fill: #C9A77C;
+    -fx-font-size: 11px;
+}
+
+#labelPreco {
+    -fx-text-fill: #4CAF50;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(76, 175, 80, 0.5), 5, 0, 0, 2);
+}
+
+.btn-modal-adicionar {
+    -fx-background-color: linear-gradient(to bottom, #2E7D32, #1B5E20);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 3);
+}
+
+.btn-modal-adicionar:hover {
+    -fx-background-color: linear-gradient(to bottom, #388E3C, #2E7D32);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.btn-modal-adicionar:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+.btn-modal-cancelar {
+    -fx-background-color: linear-gradient(to bottom, #616161, #424242);
+    -fx-text-fill: #E0E0E0;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-border-color: #9E9E9E;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+}
+
+.btn-modal-cancelar:hover {
+    -fx-background-color: linear-gradient(to bottom, #757575, #616161);
+}
+
+.btn-modal-cancelar:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* ========================================================================= */
+/*                        PAINEL ADMINISTRATIVO                              */
+/* ========================================================================= */
+
+.admin-background {
+    -fx-background-color: linear-gradient(to bottom, #0a0e27, #141824);
+}
+
+.admin-header {
+    -fx-background-color: linear-gradient(to bottom, #1a1f3a, #0f1229);
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 0 0 3 0;
+}
+
+.admin-icon-container {
+    -fx-background-color: rgba(212, 175, 55, 0.15);
+    -fx-background-radius: 50;
+    -fx-padding: 15;
+    -fx-pref-width: 80;
+    -fx-pref-height: 80;
+}
+
+.admin-titulo-principal {
+    -fx-text-fill: #D4AF37;
+    -fx-effect: dropshadow(gaussian, rgba(212, 175, 55, 0.5), 10, 0, 0, 3);
+}
+
+.admin-subtitulo-header {
+    -fx-text-fill: #C9A77C;
+}
+
+.admin-stats-section {
+    -fx-background-color: #0f1229;
+}
+
+.admin-card-stats {
+    -fx-background-color: linear-gradient(to bottom, #1e2540, #151b33);
+    -fx-background-radius: 15;
+    -fx-border-color: #2a3354;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 15, 0, 0, 5);
+}
+
+.admin-card-label {
+    -fx-text-fill: #C9A77C;
+    -fx-font-size: 13px;
+}
+
+.admin-card-value-blue {
+    -fx-text-fill: #64B5F6;
+    -fx-effect: dropshadow(gaussian, rgba(100, 181, 246, 0.5), 8, 0, 0, 2);
+}
+
+.admin-card-value-green {
+    -fx-text-fill: #4CAF50;
+    -fx-effect: dropshadow(gaussian, rgba(76, 175, 80, 0.5), 8, 0, 0, 2);
+}
+
+.admin-section-header {
+    -fx-background-color: linear-gradient(to right, #1e2540, #151b33);
+    -fx-background-radius: 10;
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 0 0 0 4;
+    -fx-border-radius: 10;
+}
+
+.admin-section-title-white {
+    -fx-text-fill: #F5DEB3;
+}
+
+.admin-lista-pedidos-moderna {
+    -fx-background-color: #0f1229;
+    -fx-border-color: #2a3354;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.admin-lista-pedidos-moderna .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C9A77C;
+    -fx-font-size: 13px;
+    -fx-padding: 12px 15px;
+    -fx-border-color: transparent transparent #1e2540 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.admin-lista-pedidos-moderna .list-cell:selected {
+    -fx-background-color: rgba(212, 175, 55, 0.2);
+    -fx-text-fill: #D4AF37;
+    -fx-font-weight: bold;
+}
+
+.admin-lista-pedidos-moderna .list-cell:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.1);
+}
+
+.btn-admin-refresh {
+    -fx-background-color: linear-gradient(to bottom, #1976D2, #1565C0);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0, 0, 2);
+}
+
+.btn-admin-refresh:hover {
+    -fx-background-color: linear-gradient(to bottom, #2196F3, #1976D2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.admin-detalhes-container {
+    -fx-background-color: #0f1229;
+    -fx-background-radius: 10;
+    -fx-border-color: #2a3354;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+}
+
+.admin-textarea-detalhes {
+    -fx-background-color: #0a0e1f;
+    -fx-text-fill: #C9A77C;
+    -fx-control-inner-background: #0a0e1f;
+    -fx-border-color: transparent;
+    -fx-background-radius: 8;
+}
+
+.admin-textarea-detalhes .content {
+    -fx-background-color: #0a0e1f;
+}
+
+.separator-admin {
+    -fx-background-color: #2a3354;
+    -fx-pref-height: 2;
+}
+
+.admin-control-panel {
+    -fx-background-color: linear-gradient(to bottom, #1e2540, #151b33);
+    -fx-background-radius: 12;
+    -fx-border-color: #2a3354;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+}
+
+.admin-control-title {
+    -fx-text-fill: #F5DEB3;
+}
+
+.admin-combo-moderna {
+    -fx-background-color: #0a0e1f;
+    -fx-text-fill: #C9A77C;
+    -fx-background-radius: 8;
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+}
+
+.admin-combo-moderna .list-cell {
+    -fx-background-color: #0a0e1f;
+    -fx-text-fill: #C9A77C;
+}
+
+.admin-combo-moderna .list-cell:hover {
+    -fx-background-color: rgba(212, 175, 55, 0.2);
+}
+
+.btn-admin-confirmar {
+    -fx-background-color: linear-gradient(to bottom, #2E7D32, #1B5E20);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 3);
+}
+
+.btn-admin-confirmar:hover {
+    -fx-background-color: linear-gradient(to bottom, #388E3C, #2E7D32);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.admin-footer-section {
+    -fx-background-color: #0f1229;
+}
+
+.btn-admin-voltar-menu {
+    -fx-background-color: linear-gradient(to bottom, #424242, #303030);
+    -fx-text-fill: #D4AF37;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-border-color: #D4AF37;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0, 0, 2);
+}
+
+.btn-admin-voltar-menu:hover {
+    -fx-background-color: linear-gradient(to bottom, #525252, #424242);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
