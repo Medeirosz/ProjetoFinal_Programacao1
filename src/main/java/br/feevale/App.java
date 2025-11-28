@@ -33,7 +33,7 @@ public class App extends Application {
         
         // Configurações da janela
         stage.setScene(scene);
-        stage.setTitle("Cafeteria Premium - Totem de Autoatendimento");
+        stage.setTitle("Cafeteria Ragu - Totem de Autoatendimento");
         
         // Define se a janela pode ser redimensionada
         stage.setResizable(RESIZABLE);
