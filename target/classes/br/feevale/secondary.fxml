@@ -36,7 +36,7 @@
             <Insets top="20" right="20" bottom="20" left="20"/>
          </padding>
          
-         <Label text="☕ CAFETERIA PREMIUM" styleClass="totem-titulo" wrapText="true" alignment="CENTER">
+         <Label text="Cafeteria RAGU" styleClass="totem-titulo" wrapText="true" alignment="CENTER">
             <font>
                <Font name="System Bold" size="32.0"/>
             </font>
